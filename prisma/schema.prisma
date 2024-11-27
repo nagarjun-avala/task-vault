@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model account {
+  id                String  @id
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  @@unique([provider, providerAccountId], map: "Account_provider_providerAccountId_key")
+}
+
+model expense {
+  id          String   @id
+  amount      Float
+  description String
+  category    String
+  date        DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+  userId      String
+}
+
+model session {
+  id           String   @id
+  sessionToken String   @unique(map: "Session_sessionToken_key")
+  userId       String
+  expires      DateTime
+}
+
+model task {
+  id          String    @id
+  title       String
+  description String?
+  dueDate     DateTime?
+  completed   Boolean   @default(false)
+  isRecurring Boolean   @default(false)
+  frequency   String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime
+  userId      String
+}
+
+model user {
+  id            String    @id
+  name          String?
+  email         String?   @unique(map: "User_email_key")
+  emailVerified DateTime?
+  image         String?
+}
