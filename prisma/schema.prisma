@@ -7,9 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model account {
-  id                String  @id
+model User {
+  id            String    @id @default(uuid())
+  name          String
+  avatarUrl     String    @db.Text
+  email         String    @unique(map: "User_email_key")
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  Task    Task[]
+  Session Session[]
+  Expense Expense[]
+  Account Account[]
+}
+
+model Account {
+  id                String   @id @default(uuid())
   userId            String
+  user              User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
   type              String
   provider          String
   providerAccountId String
@@ -20,45 +37,43 @@ model account {
   scope             String?
   id_token          String?
   session_state     String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
   @@unique([provider, providerAccountId], map: "Account_provider_providerAccountId_key")
 }
 
-model expense {
-  id          String   @id
+model Expense {
+  id          String   @id @default(uuid())
   amount      Float
   description String
   category    String
-  date        DateTime
+  userId      String
+  user        User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt   DateTime @default(now())
   updatedAt   DateTime
-  userId      String
 }
 
-model session {
-  id           String   @id
+model Session {
+  id           String   @id @default(uuid())
   sessionToken String   @unique(map: "Session_sessionToken_key")
   userId       String
+  user         User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
   expires      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
-model task {
-  id          String    @id
+model Task {
+  id          String    @id @default(uuid())
   title       String
   description String?
   dueDate     DateTime?
   completed   Boolean   @default(false)
   isRecurring Boolean   @default(false)
   frequency   String?
+  userId      String
+  user        User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime
-  userId      String
-}
-
-model user {
-  id            String    @id
-  name          String?
-  email         String?   @unique(map: "User_email_key")
-  emailVerified DateTime?
-  image         String?
 }
