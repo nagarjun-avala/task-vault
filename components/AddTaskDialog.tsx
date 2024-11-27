@@ -47,6 +47,9 @@ export default function AddTaskDialog({
       setLoading(false)
       console.log(error)
     }
+    finally{
+      setLoading(false)
+    }
   };
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

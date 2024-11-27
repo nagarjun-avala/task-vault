@@ -15,7 +15,6 @@ const initialTasks = [{
 
 export default function TaskManager() {
   const [tasks, setTasks] = React.useState(initialTasks);
-  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
   return (

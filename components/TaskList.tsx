@@ -4,9 +4,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { formatDate } from "@/lib/utils";
 
 export default function TaskList({tasks}:{tasks:Task[]}) {
-  const [isLoading,setIsLoading] = React.useState(false)
-
-  if (isLoading) return <div>Loading tasks...</div>;
 
   return (
     <div className="space-y-4">
@@ -32,7 +29,7 @@ export default function TaskList({tasks}:{tasks:Task[]}) {
             )}
             {task.dueDate && (
               <p className="text-sm text-muted-foreground">
-                Due: {formatDate(new Date(task.dueDate))}
+                Due: {formatDate(task.dueDate)}
               </p>
             )}
           </div>
