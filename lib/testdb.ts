@@ -12,7 +12,7 @@ type profileTypes = {
     tradeId: number;
 };
 
-type tradeTypes = {
+export type tradeTypes = {
     id: number,
     transaction_type: string,
     gross_amount: number,
