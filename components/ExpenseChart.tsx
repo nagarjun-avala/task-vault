@@ -1,10 +1,10 @@
+import { Expense } from "@prisma/client";
 import React from "react";
 
-import { formatCurrency } from "@/lib/utils";
 
-export default function ExpenseChart({ transactions }: { transactions: any[] }) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function ExpenseChart({ transactions }: { transactions: Expense[] }) {
   // Aggregate data by date
-
 
   return (
     <div className="h-[300px]">

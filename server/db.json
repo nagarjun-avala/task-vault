@@ -1,0 +1,165 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "JSON-Server",
+            "author": "Amit"
+        },
+        {
+            "id": 2,
+            "title": "Node.js",
+            "author": "Mohit"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "Great post!",
+            "postId": 1
+        },
+        {
+            "id": 2,
+            "body": "Informative!",
+            "postId": 2
+        }
+    ],
+    "trades": [
+        {
+            "id": 1,
+            "transaction_type": "loss",
+            "gross_amount": 200,
+            "net_result": -100,
+            "entry_id": "E1",
+            "operation_type": "expense",
+            "value": 100,
+            "profit_or_loss": "loss",
+            "identifier": "TXN001",
+            "outcome": "negative",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 2,
+            "transaction_type": "profit",
+            "gross_amount": 500,
+            "net_result": 200,
+            "entry_id": "E2",
+            "operation_type": "income",
+            "value": 300,
+            "profit_or_loss": "profit",
+            "identifier": "TXN002",
+            "outcome": "positive",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 3,
+            "transaction_type": "loss",
+            "gross_amount": 300,
+            "net_result": -150,
+            "entry_id": "E3",
+            "operation_type": "expense",
+            "value": 150,
+            "profit_or_loss": "loss",
+            "identifier": "TXN003",
+            "outcome": "negative",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 4,
+            "transaction_type": "profit",
+            "gross_amount": 700,
+            "net_result": 350,
+            "entry_id": "E4",
+            "operation_type": "income",
+            "value": 350,
+            "profit_or_loss": "profit",
+            "identifier": "TXN004",
+            "outcome": "positive",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 5,
+            "transaction_type": "loss",
+            "gross_amount": 100,
+            "net_result": -50,
+            "entry_id": "E5",
+            "operation_type": "expense",
+            "value": 50,
+            "profit_or_loss": "loss",
+            "identifier": "TXN005",
+            "outcome": "negative",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 6,
+            "transaction_type": "profit",
+            "gross_amount": 800,
+            "net_result": 400,
+            "entry_id": "E6",
+            "operation_type": "income",
+            "value": 400,
+            "profit_or_loss": "profit",
+            "identifier": "TXN006",
+            "outcome": "positive",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 7,
+            "transaction_type": "loss",
+            "gross_amount": 400,
+            "net_result": -200,
+            "entry_id": "E7",
+            "operation_type": "expense",
+            "value": 200,
+            "profit_or_loss": "loss",
+            "identifier": "TXN007",
+            "outcome": "negative",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 8,
+            "transaction_type": "profit",
+            "gross_amount": 600,
+            "net_result": 300,
+            "entry_id": "E8",
+            "operation_type": "income",
+            "value": 300,
+            "profit_or_loss": "profit",
+            "identifier": "TXN008",
+            "outcome": "positive",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 9,
+            "transaction_type": "loss",
+            "gross_amount": 250,
+            "net_result": -125,
+            "entry_id": "E9",
+            "operation_type": "expense",
+            "value": 125,
+            "profit_or_loss": "loss",
+            "identifier": "TXN009",
+            "outcome": "negative",
+            "trade_company": "NIFTY 50"
+        },
+        {
+            "id": 10,
+            "transaction_type": "profit",
+            "gross_amount": 1000,
+            "net_result": 500,
+            "entry_id": "E10",
+            "operation_type": "income",
+            "value": 500,
+            "profit_or_loss": "profit",
+            "identifier": "TXN010",
+            "outcome": "positive",
+            "trade_company": "NIFTY 50"
+        }
+    ],
+    "$schema": [
+        
+    ],
+    "profile": {
+        "name": "Amit Kumar",
+        "tradeId":1
+    }
+}
